@@ -20,13 +20,15 @@ const Home = () => {
     fecthData();
   }, []);
   return (
-    <div>
+    <div className="bg-slate-700">
       <Header />
-      <ul>
-        {data.map((film, index) => (
-          <Card key={index} film={film} />
-        ))}
-      </ul>
+      <div>
+        <ul className="mx-auto my-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 m-4">
+          {data.map((film, index) => (
+            <Card key={index} film={film} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

@@ -1,15 +1,24 @@
 const Card = ({ film }) => {
   return (
-    <div>
-      <img src={film.poster_path} alt="" />
-      <div>
-        <h2>{film.title}</h2>
-        <p>{film.release_date}</p>
+    <div className="flex flex-col bg-slate-900 text-white rounded-xl ">
+      <img
+        className="h-48 w-96 object-contain rounded-3xl py-4 "
+        src={`https://image.tmdb.org/t/p/original/${film.poster_path}`}
+      />
+      <div className="m-2">
+        {/* <div> */}
+        <h2 className="font-bold">{film.title}</h2>
+        <p className="text-sm text-gray-500/75">
+          Sortie le {film.release_date}
+        </p>
         <p>{film.vote_average}</p>
-      </div>
-      <div>
-        <p>Synopsis</p>
-        <p>{film.overview}</p>
+        {/* </div> */}
+        {/* <div> */}
+        <p className="font-bold">Synopsis</p>
+        <p className=" text-sm text-gray-500/75 text-justify">
+          {film.overview}
+        </p>
+        {/* </div> */}
       </div>
     </div>
   );
