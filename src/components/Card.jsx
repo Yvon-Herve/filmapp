@@ -2,7 +2,7 @@ const Card = ({ film }) => {
   return (
     <div className="flex flex-col bg-slate-900 text-white rounded-xl ">
       <img
-        className="h-48 w-96 object-contain rounded-3xl py-4 "
+        className="h-78 w-56 mx-auto object-cover rounded-3xl overflow-hidden py-4 "
         src={`https://image.tmdb.org/t/p/original/${film.poster_path}`}
       />
       <div className="m-2 space-y-2">
