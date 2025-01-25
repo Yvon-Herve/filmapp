@@ -22,8 +22,8 @@ const Home = () => {
   return (
     <div className="bg-slate-700">
       <Header />
-      <div>
-        <ul className="mx-auto my-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 m-4">
+      <div className="pt-4">
+        <ul className="mx-auto my-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
           {data.map((film, index) => (
             <Card key={index} film={film} />
           ))}

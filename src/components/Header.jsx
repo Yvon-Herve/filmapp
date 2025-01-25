@@ -2,13 +2,16 @@ import Navigation from "./Navigation";
 
 const Header = () => {
   return (
-    <div>
-      <Navigation />
-      <div>
-        <h1>React movie</h1>
-        <div>
-          <input className="border-2 border-blue-800" type="text" />
-          <button>Rechercher</button>
+    <div className="text-white">
+      <div className="w-1/4">
+        <Navigation />
+      </div>
+
+      <div className="flex-1 flex flex-col justify-center items-center">
+        <h1 className="font-bold text-3xl p-2">React Movie</h1>
+        <div className="flex-1 flex flex-col py-2 rounded-xl">
+          <input className="bg-white" type="text" />
+          <button className="bg-blue-600">Rechercher</button>
         </div>
       </div>
     </div>
