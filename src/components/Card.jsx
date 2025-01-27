@@ -79,7 +79,10 @@ const Card = ({ film }) => {
     let storedData = window.localStorage.films
       ? window.localStorage.films.split(",")
       : [];
-    window.localStorage.films = film.id;
+    if (!storedData.includes(film.id.toString())) {
+      storedData.push(film.id);
+      window.localStorage.films = storedData;
+    }
   };
   return (
     <div className="flex flex-col bg-slate-900 text-white rounded-xl relative">
