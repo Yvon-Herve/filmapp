@@ -5,14 +5,12 @@ import Favoris from "./pages/Favoris";
 
 const App = () => {
   return (
-    // <div className="bg-slate-700">
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/favoris" element={<Favoris />} />
       </Routes>
     </BrowserRouter>
-    // </div>
   );
 };
 

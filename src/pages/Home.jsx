@@ -10,7 +10,8 @@ const Home = () => {
   const fecthData = async () => {
     try {
       const res = await axios.get(
-        "https://api.themoviedb.org/3/search/movie?api_key=ed82f4c18f2964e75117c2dc65e2161d&query=foot&language=fr-FR"
+        "https://api.themoviedb.org/3/movie/popular?api_key=ed82f4c18f2964e75117c2dc65e2161d&language=fr-FR"
+        // `https://api.themoviedb.org/3/search/movie?api_key=ed82f4c18f2964e75117c2dc65e2161d&query=${search}&language=fr-FR`
       );
       setData(res.data.results);
     } catch (error) {
@@ -19,7 +20,7 @@ const Home = () => {
   };
   useEffect(() => {
     fecthData();
-  }, []);
+  }, [search]);
   return (
     <div className="bg-slate-700">
       <div className="w-1/4 text-white">
@@ -44,6 +45,7 @@ const Home = () => {
             .filter((titlefilm) =>
               titlefilm.title.toLowerCase().includes(search.toLowerCase())
             )
+            .slice(0, 12)
             .map((film, index) => (
               <Card key={index} film={film} />
             ))}
