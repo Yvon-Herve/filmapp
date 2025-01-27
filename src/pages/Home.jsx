@@ -10,7 +10,7 @@ const Home = () => {
   const fecthData = async () => {
     try {
       const res = await axios.get(
-        "https://api.themoviedb.org/3/search/movie?api_key=ed82f4c18f2964e75117c2dc65e2161d&query=code&language=fr-FR"
+        "https://api.themoviedb.org/3/search/movie?api_key=ed82f4c18f2964e75117c2dc65e2161d&query=foot&language=fr-FR"
       );
       setData(res.data.results);
     } catch (error) {
