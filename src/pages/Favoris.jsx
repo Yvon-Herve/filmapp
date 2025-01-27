@@ -1,11 +1,11 @@
 // import React from "react";
 
-import Header from "../components/Header";
+import Navigation from "../components/Navigation";
 
 const Favoris = () => {
   return (
     <div>
-      <Header />
+      <Navigation />
       <h1>ff</h1>
     </div>
   );

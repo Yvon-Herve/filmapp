@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Header from "../components/Header";
+import Navigation from "../components/Navigation";
 import Card from "../components/Card";
 
 const Home = () => {
   const [data, setData] = useState([]);
+  const [search, setSearch] = useState("");
 
   const fecthData = async () => {
     try {
@@ -21,12 +22,31 @@ const Home = () => {
   }, []);
   return (
     <div className="bg-slate-700">
-      <Header />
+      <div className="w-1/4 text-white">
+        <Navigation />
+      </div>
+      <div className="flex-1 flex flex-col justify-center items-center text-white">
+        <h1 className="font-bold text-3xl p-2">Movie App</h1>
+        <div className="flex-1 flex flex-col py-2">
+          <input
+            onChange={(e) => setSearch(e.target.value)}
+            className="bg-white text-black p-2 rounded-t-lg"
+            type="text"
+          />
+          <button className="bg-blue-600 rounded-b-lg font-bold p-2">
+            Rechercher
+          </button>
+        </div>
+      </div>
       <div className="pt-4">
         <ul className="mx-auto my-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-          {data.map((film, index) => (
-            <Card key={index} film={film} />
-          ))}
+          {data
+            .filter((titlefilm) =>
+              titlefilm.title.toLowerCase().includes(search.toLowerCase())
+            )
+            .map((film, index) => (
+              <Card key={index} film={film} />
+            ))}
         </ul>
       </div>
     </div>
