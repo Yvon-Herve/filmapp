@@ -1,3 +1,5 @@
+import Home from "../pages/Home";
+
 const Card = ({ film }) => {
   const dateFormater = (date) => {
     let [yy, mm, dd] = date.split("-");
